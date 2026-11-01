@@ -19,6 +19,42 @@
 
 ---
 
+## Keyword Research Summary
+
+**Tools used:** Ubersuggest (US, locId 2840) for volume, SEO difficulty and intent. KeywordTool.io guest access for autocomplete suggestions, questions and prepositions. Guest access returns keyword text only, so terms sourced there are marked as suggested rather than measured.
+
+### Researched (with data)
+
+| Keyword | Volume (US/mo) | SEO difficulty | Notes |
+|---|---|---|---|
+| modal animation | 30 | 41 | Primary. Intent is informational. Outline listed 20/mo KD 23; Ubersuggest US now shows 30/mo KD 41, so difficulty is higher than the brief assumed. |
+| bottom sheet animation | 50 | 27 | Highest volume and lowest difficulty in the whole cluster. Mixed informational and transactional intent. The brief asked to validate this term; it validates well and is the best secondary bet. |
+| overlay animation | 70 | 40 | **Caution.** Volume is real but the SERP intent is video editing, not UI. Suggestions returned stream overlay animation, CapCut overlay animation, Twitch overlay animation, facial overlay animation. Do not optimise the Overlay section for this term in isolation. Use overlay ui animation instead. |
+| react native modal animation | 30 | 30 | Implementation long-tail, informational. |
+| framer motion modal animation | 10 | 5 | Very low difficulty. Good long-tail entry point. |
+| figma drawer animation | 10 | 13 | Design-tool long-tail for the drawer section. |
+| shopify cart drawer animation | 0 | 4 | Near zero volume, listed only to show the drawer term is thin. |
+
+### Researched (suggestions, no volume on guest access)
+
+Comparison intent, which matches this article's angle directly: modal vs bottom sheet, bottom sheet vs modal, bottom sheet vs dialog, sheet vs modal, ios modal vs bottom sheet, persistent bottom sheet vs modal bottom sheet, react native bottom sheet vs modal.
+
+Question intent, usable as FAQ seeds: what is modal animation, what is a bottom sheet, why modal is bad, why avoid modals, are modals accessible, are modal windows accessible, are modals bad.
+
+### Conclusions that shaped the article
+
+1. The brief's note was right. This is a low-demand cluster in raw volume. The value is not head-term ranking, it is topical coverage plus the comparison angle, which has real suggestion volume ("modal vs bottom sheet", "bottom sheet vs dialog"). That is why the article is built as a ranked comparison with a weight table, not as seven unconnected definitions.
+2. "overlay animation" is contaminated by video-editing intent. The Overlay section uses "overlay ui animation", "scrim" and "fullscreen layer" language so it does not chase the wrong SERP.
+3. Accessibility questions ("are modals accessible", "why avoid modals") show up strongly in autocomplete, so focus trapping, escape to close and reduced motion are covered in the body and in the FAQ rather than being left out.
+4. Framework long-tails (React Native, Framer Motion, Compose, Flutter) have very low difficulty. Worth separate articles later rather than stuffing into this one.
+5. "drawer animation" and "side panel animation" returned no standalone US volume. They stay as section-level secondaries, not as campaign targets. This answers the brief's request to validate the drawer terms: bottom sheet validates, drawer does not.
+
+### Not used
+
+Rejected as irrelevant despite volume: stream overlay animation, Twitch overlay animation, CapCut overlay animation, text overlay animation, facial overlay animation, HUD overlay animation, modal sheets vs cotton, insulated cookie sheet vs regular. All are different industries or fabric and bedding queries that share the words only.
+
+---
+
 ## TL;DR
 
 - Seven overlay patterns, one job: put something on top of the page without navigating away.
@@ -421,3 +457,65 @@ Optional fourth, if the related block allows it: Collapse (https://www.ripplix.c
   ]
 }
 ```
+
+
+---
+
+## Final QA Checklist
+
+### Content validation
+
+| Check | Status | Note |
+|---|---|---|
+| Every pack item has its own section | PASS | 7 sections: Modal, Bottom Sheet, Popover, Pop up, Overlay, Drawer, Side Panel. |
+| Items follow original pack order | PASS | Order preserved exactly as in the content pack. |
+| Every video matched against all_animations.json | PASS | All 21 slugs resolved to a record. 0 missing, 0 duplicate URLs. |
+| Every video description reflects its actual interaction | PASS | Written from the matched record's title, product, platform, industry and interaction tags. |
+| Duplicate URLs handled honestly | PASS (N/A) | No duplicates in this pack. The two Wrike recordings are different slugs and different tag sets, and the article says so explicitly. |
+| No unsupported products, platforms or features introduced | PASS | Product names corrected to the verified records where the outline used placeholders. See flags below. |
+| FAQ contains 4 to 6 questions | PASS | 6 questions. |
+
+### SEO validation
+
+| Check | Status | Note |
+|---|---|---|
+| Article title short and intent-focused | PASS | States the comparison and the decision. |
+| Meta title 60 characters or fewer | PASS | 55 characters. |
+| Meta description 155 characters or fewer | PASS | 134 characters. |
+| Both metadata fields contain the primary keyword | PASS | "Modal Animation" in the meta title, "modal animation" in the meta description. |
+| Primary keyword in the introduction | PASS | First sentence of the introduction. |
+| Secondary and long-tail keywords included | PASS | All six secondary hero keywords plus accessibility, performance and comparison long-tails. |
+| Internal links use correct URLs | PASS | All 7 interaction hubs and all 21 library URLs taken verbatim from the pack. |
+| Each required anchor appears exactly once | PASS | Verified: 1 inline link per interaction hub. |
+
+### Structure validation
+
+| Check | Status | Note |
+|---|---|---|
+| TL;DR contains 3 to 5 lines | PASS | 5 lines. |
+| Introduction contains 2 to 3 short paragraphs | PASS | 3 paragraphs. |
+| All item sections included | PASS | 7 of 7. |
+| FAQ visible in article body | PASS | Rendered as body content, not schema only. |
+| Conclusion contains 2 short paragraphs | PASS | 2 paragraphs. |
+| Conclusion repeats primary keyword exactly once | PASS | Verified by count: 1. |
+| Conclusion includes the Cursor, Lovable, v0, Bolt, Replit CTA | PASS | Final sentence of the second paragraph. |
+| Internal Linking Suggestions section included | PASS | Separated into "already included" and "suggested". |
+| JSON-LD contains Article and BreadcrumbList only | PASS | Parsed and validated. No FAQPage. |
+
+### Writing validation
+
+| Check | Status | Note |
+|---|---|---|
+| Plain, simple, founder-style English | PASS | Short sentences, practical framing, no marketing padding. |
+| No fancy or unnecessary words | PASS | |
+| No keyword stuffing | PASS | Each hero keyword used where it describes the pattern, not repeated for density. |
+| No repetitive AI-style content | PASS | The pack's boilerplate "This is a real X UI animation recorded from Y" line was not reused 21 times. Each description is written from that record's own tags. |
+| No em dashes anywhere | PASS | Full-output scan for the character returned 0 occurrences. En dashes also 0. |
+
+### Flags for the editor
+
+1. **Product name corrections.** The outline labelled several videos with placeholders that do not match the animation record. Corrected against all_animations.json: "Habit App AI Coach Modal" is Fabulous; "Customize home bottom sheet" is Asana; "Mobile App Travel Bottom Sheet" is Airbnb; "Mobile App Carousel Bottom Sheet" is Headspace; "action-menu-popover.mp4" is Atoms; "Account schedule popover" is Monday; "Mobile App Pop up" is Acute Calculator; "Mobile App Select Pop up" is Duolingo ABC; "Mobile App" (Pop up item, video 3) is Craft; "Web App" (Side Panel item, video 3) is Chase.
+2. **One assigned video keyword was not supportable.** The Reform Collective fullscreen menu was assigned "accordion expand animation", but its record tags are Menu, Hover, Hero, Reveal, Overlay. There is no accordion behaviour in it. The description calls it a reveal and says so plainly rather than asserting an accordion.
+3. **Assigned video keywords that cross categories were kept where the data supports them.** The three Pop up videos were assigned "bottom sheet animation" and all three records genuinely carry bottom sheet or slide up tags, so that assignment is accurate and is used.
+4. **The Aim XR record is an AR and VR platform entry, not a web or mobile overlay.** Its "card animation" keyword is supported by a Card tag on the record, so it is used, but the section notes the platform difference instead of presenting it as a standard web scrim.
+5. **Sibling collection URLs were verified** against the live Ripplix interaction vocabulary before being suggested. Dropdown, Accordion, Menu and Collapse all exist with the slugs given.
